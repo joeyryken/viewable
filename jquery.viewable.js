@@ -82,10 +82,7 @@ function checkVisibility() {
 		
 		percentageX = 1 - ((hiddenLeft + hiddenRight)/elWidth);
 
-		percentageY = (percentageY > 1 ? 1 : percentageY < 0 ? 0 : parseFloat(percentageY));
-		percentageX = (percentageX > 1 ? 1 : percentageX < 0 ? 0 : parseFloat(percentageX));
-
-		percentage = percentageX + percentageY - 1;
+		percentage = percentageX * percentageY;
 		
 		// Trigger viewable event along with percentage of viewable
 		$(element).trigger('viewable', [ percentage ]);
